@@ -54,7 +54,7 @@ class Net_jango(nn.Module):
 #loading model 
 model = Net_jango()
 model_save_name = 'jango_classifier.pt'
-path_model = "/content/drive/MyDrive/jackfruit_mango_classifier/" + model_save_name
+path_model = model_save_name
 model.load_state_dict(torch.load(path_model))
 #model.to(device)
 
@@ -69,7 +69,7 @@ def transform_images(im):
   image = transform1(im)
   return image.unsqueeze(0)
 
-app = Flask(__name__,template_folder='/content/drive/MyDrive/jackfruit_mango_classifier/templates')
+app = Flask(__name__,template_folder='/templates')
 run_with_ngrok(app)
  
 @app.route('/')
