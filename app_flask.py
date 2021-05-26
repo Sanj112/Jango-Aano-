@@ -52,11 +52,13 @@ class Net_jango(nn.Module):
         return x
 
 #loading model 
+device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+
 model = Net_jango()
 model_save_name = 'jango_classifier.pt'
 path_model = model_save_name
 model.load_state_dict(torch.load(path_model))
-#model.to(device)
+model.to(device)
 
 #required transforms
 def transform_images(im):
@@ -87,7 +89,7 @@ def predict():
     with torch.no_grad():
       # transform the image    
       transformed_image = transform_images(image)
-      
+      transformed_image = transformed_image.to(device)
       # use the model to predict the class
       outputs = model(transformed_image)
       output = nn.Softmax(dim=1)(outputs)[0]*100
