@@ -24,11 +24,6 @@ urll = "https://thumbs.dreamstime.com/b/fruits-mango-scientific-name-mangifera-i
 urll_strawberry="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlVUvJaC6A7E6v6BiwlGbK-fbDhbOqFdF7Ig&usqp=CAU"
 urlll = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIbYghVvP244wnntIFb9K4sgaFbqW5lrCE-w&usqp=CAU"
 
-from google.colab import drive
-drive.mount('/content/drive')
-
-device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-device
 
 #architecture based on Lenet5
 class Net_jango(nn.Module):
