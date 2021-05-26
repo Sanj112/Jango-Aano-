@@ -5,3 +5,4 @@ imageio >=2.0.0
 https://download.pytorch.org/whl/cpu/torchvision-0.9.1%2Bcpu-cp39-cp39-linux_x86_64.whl
 pillow>=6.0.0
 gunicorn>=20.0.0                                                                           
+flask-ngrok==0.0.25
