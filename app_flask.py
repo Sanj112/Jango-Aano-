@@ -8,7 +8,6 @@ Original file is located at
 """
 
 from flask import Flask, redirect, url_for, request, render_template
-from flask_ngrok import run_with_ngrok
 from imageio import imread
 from PIL import Image
 import matplotlib.pyplot as plt
@@ -75,7 +74,7 @@ def transform_images(im):
   return image.unsqueeze(0)
 
 app = Flask(__name__,template_folder='/content/drive/MyDrive/jackfruit_mango_classifier/templates')
-run_with_ngrok(app)
+
  
 @app.route('/')
 def home():
