@@ -14,9 +14,24 @@ BFH/recHYFLbYimQhCULF/2021
 1. Sanjana A R [https://github.com/Sanj112]
 2. Sanjay s Nair[https://github.com/Sanjaysnair0721]
 
+
+## Team Id
+Team id here
+## Link to product walkthrough
+[link to video]
+## How it Works ?
+1. We have used a simple Lenet 5 based CNN architecture to implement the model.It has 5 layers - 2 convolution and maxpool layers and 3 fully connected layers.
+The trained model is saved to derive. 
+2.The pretrained model saved in derive is obtained hosted as a url
+
+## Libraries used
+Library Name - Version
+## How to configure
+We have given the python noteboks and link to open in colab, you can copy and create your own file. Obtain the link for Traioning dataset and change the path to your convenienvce and python notebook can be run and model trained further.
+For running web app download jango classifier.pt and import it from drive and run it in a new colab notebook as mentioned above. After the cell app.py runs, the output line which mentions  "Running on" ouput
+will have a url, clicking on to that we can get the web page
 Files -
 Jango_Classifier_training.ipynb - Model definition and Training 
 flask.py - load as a web url
 requirements.txt, Procfile.txt - for Heroku
 jango_classifier.pt - trained model 
-
