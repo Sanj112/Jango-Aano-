@@ -8,28 +8,36 @@ We have used a simple Lenet 5 based CNN architecture to implement the model.It h
 The pretrained model saved in derive is obtained hosted as a url
 
  
-Team id : 
-BFH/recHYFLbYimQhCULF/2021
+
 ## Team members
 1. Sanjana A R [https://github.com/Sanj112]
 2. Sanjay s Nair[https://github.com/Sanjaysnair0721]
 
+##Team id : 
+BFH/recHYFLbYimQhCULF/2021
 
-## Team Id
-Team id here
 ## Link to product walkthrough
-[link to video]
+https://www.loom.com/share/584e0f7da31b4c56995d4805133e6845
+
 ## How it Works ?
 1. We have used a simple Lenet 5 based CNN architecture to implement the model.It has 5 layers - 2 convolution and maxpool layers and 3 fully connected layers.
 The trained model is saved to derive. 
 2.The pretrained model saved in derive is obtained hosted as a url
 
 ## Libraries used
-Library Name - Version
-## How to configure
+flask == 1.1.1
+matplotlib == 3.2.0
+imageio ==2.0.0
+https://download.pytorch.org/whl/cpu/torchvision-0.9.1-cp39-cp39-macosx_10_9_x86_64.whl
+pytorch == 1.6.0
+pillow==6.0.0
+gunicorn==20.0.0
+
+## How to configure and run
 We have given the python noteboks and link to open in colab, you can copy and create your own file. Obtain the link for Traioning dataset and change the path to your convenienvce and python notebook can be run and model trained further.
 For running web app download jango classifier.pt and import it from drive and run it in a new colab notebook as mentioned above. After the cell app.py runs, the output line which mentions  "Running on" ouput
 will have a url, clicking on to that we can get the web page
+
 Files -
 Jango_Classifier_training.ipynb - Model definition and Training 
 flask.py - load as a web url
