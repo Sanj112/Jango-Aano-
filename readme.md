@@ -1,3 +1,5 @@
+
+
 # Jango Aano?
 The project is done as a part of Build From Home conducted by Tinkerhub.
 The project is a binary image classifier to classy images of mango and jackfruit, also it can detect whether the image is neither of the two. 
