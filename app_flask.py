@@ -18,6 +18,7 @@ import torchvision.transforms as transforms
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import pickle
 
 #example valid urls
 urll = "https://thumbs.dreamstime.com/b/fruits-mango-scientific-name-mangifera-indica-anacardiaceae-ripened-fruit-piled-up-sale-thiruvananthapuram-kerala-india-48649430.jpg"
@@ -55,10 +56,9 @@ class Net_jango(nn.Module):
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 model = Net_jango()
-model_save_name = 'jango_classifier.pt'
-path_model = model_save_name
-model.load_state_dict(torch.load(path_model))
-model.to(device)
+
+# load model
+model = pickle.load(open('classifier.pkl','rb'))
 
 #required transforms
 def transform_images(im):
@@ -91,7 +91,7 @@ def predict():
       transformed_image = transform_images(image)
       transformed_image = transformed_image.to(device)
       # use the model to predict the class
-      outputs = model(transformed_image)
+      outputs = model.predict(transformed_image)
       output = nn.Softmax(dim=1)(outputs)[0]*100
       max,id=torch.max(output,0)
       classes =["chakka", "manga"]
