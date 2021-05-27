@@ -26,37 +26,6 @@ urll_strawberry="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlVUvJaC6
 urlll = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIbYghVvP244wnntIFb9K4sgaFbqW5lrCE-w&usqp=CAU"
 
 
-#architecture based on Lenet5
-class Net_jango(nn.Module):
-  #defining basic layers
-  def __init__(self):
-        super(Net_jango, self).__init__()
-	# 3 input image channel, 6 output channels, 5x5 square convolution kernel
-        self.conv1 = nn.Conv2d(3, 6, 5)
-	# Max pooling over a (2, 2) window
-        self.maxpool = nn.MaxPool2d(2, 2)
-	# 6 input image channel, 16 output channels, 5x5 square convolution kernel
-        self.conv2 = nn.Conv2d(6, 16, 5) 
-  #3 fully connected layers
-        self.fullyconnected1 = nn.Linear(16 * 5 * 5, 120)
-        self.fullyconnected2 = nn.Linear(120, 84)
-        self.fullyconnected3 = nn.Linear(84, 2)
-
-  def forward(self, x):
-	# the forward propagation algorithm 
-        x = self.maxpool(F.relu(self.conv1(x)))
-        x = self.maxpool(F.relu(self.conv2(x)))
-        x = x.view(-1, 16 * 5 * 5)
-        x = F.relu(self.fullyconnected1(x))
-        x = F.relu(self.fullyconnected2(x))
-        x = self.fullyconnected3(x)
-        return x
-
-#loading model 
-device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-
-model = Net_jango()
-
 # load model
 model = pickle.load(open('classifier.pkl','rb'))
 
