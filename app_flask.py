@@ -25,6 +25,25 @@ urll = "https://thumbs.dreamstime.com/b/fruits-mango-scientific-name-mangifera-i
 urll_strawberry="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlVUvJaC6A7E6v6BiwlGbK-fbDhbOqFdF7Ig&usqp=CAU"
 urlll = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIbYghVvP244wnntIFb9K4sgaFbqW5lrCE-w&usqp=CAU"
 
+class Net_jango(nn.Module):
+    def __init__(self):
+        super(Net_jango, self).__init__()
+        self.conv1 = nn.Conv2d(3, 6, 5)
+        self.maxpool = nn.MaxPool2d(2, 2)
+        self.conv2 = nn.Conv2d(6, 16, 5) 
+        self.fullyconnected1 = nn.Linear(16 * 5 * 5, 120)
+        self.fullyconnected2 = nn.Linear(120, 84)
+        self.fullyconnected3 = nn.Linear(84, 2)
+
+    def forward(self, x):
+
+        x = self.maxpool(F.relu(self.conv1(x)))
+        x = self.maxpool(F.relu(self.conv2(x)))
+        x = x.view(-1, 16 * 5 * 5)
+        x = F.relu(self.fullyconnected1(x))
+        x = F.relu(self.fullyconnected2(x))
+        x = self.fullyconnected3(x)
+        return x
 
 # load model
 model = pickle.load(open('classifier.pkl','rb'))
