@@ -77,5 +77,5 @@ def success(out):
  
 #"https://images.app.goo.gl/PH1nAmmAPwf5dQBh7" - mang
 #https://images.app.goo.gl/b6X46swmbpNgXWkZ6 - jack
-
-app.run()
+if __name__ == '__main__':
+    app.run()
