@@ -13,11 +13,11 @@ The pretrained model saved in derive is obtained hosted as a url
 1. Sanjana A R [https://github.com/Sanj112]
 2. Sanjay s Nair[https://github.com/Sanjaysnair0721]
 
-##Team id : 
+## Team id : 
 BFH/recHYFLbYimQhCULF/2021
 
 ## Link to product walkthrough
-https://www.loom.com/share/584e0f7da31b4c56995d4805133e6845
+https://www.loom.com/share/596f2350b88c416886aab0ac1c33ee05
 
 ## How it Works ?
 1. We have used a simple Lenet 5 based CNN architecture to implement the model.It has 5 layers - 2 convolution and maxpool layers and 3 fully connected layers.
