@@ -28,12 +28,12 @@ The trained model is saved to derive.
 flask == 1.1.1
 matplotlib == 3.2.0
 imageio ==2.0.0
-https://download.pytorch.org/whl/cpu/torchvision-0.9.1-cp39-cp39-macosx_10_9_x86_64.whl
+torchvision
 pytorch == 1.6.0
 pillow==6.0.0
 gunicorn==20.0.0
 
 ## How to configure and run
 We have given the python noteboks and link to open in colab, you can copy and create your own file. Obtain the link for Traioning dataset and change the path to your convenienvce and python notebook can be run and model trained further.
-For running web app download jango classifier.pt and import it from drive and run it in a new colab notebook as mentioned above. After the cell app.py runs, the output line which mentions  "Running on" ouput
-will have a url, clicking on to that we can get the web page
+For running web app download jango classifier.pt and import it from drive and run it in a new colab notebook as mentioned above. After the cell app.py runs, the output line which mentions  "Running on" ouput will have a url, clicking on to that we can get the web page, grab a url and paste it on the page, you will get the predication
+
